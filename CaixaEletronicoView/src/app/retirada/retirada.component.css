@@ -1,0 +1,20 @@
+.cedulas {
+    width: 180px;
+    background-color: #c2cdd4;
+    border-radius: 10%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    margin-left: 5px;
+}
+
+.cedulas .centavos {
+    font-size: 0.5em;
+}
+
+.cedulas .quantidade {
+    font-size: 0.5em;
+    position: absolute;
+    left: 9px;
+}

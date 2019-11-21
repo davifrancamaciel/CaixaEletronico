@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 mb-2 offset-lg-3">
+            <div class="alert alert-dark" role="alert">
+                <h4 class="alert-heading">Saldo disponível</h4>
+                <p>{{informacoesConta?.saldo}}</p>
+            </div>
+            <h3>Saque</h3>
+            <form [formGroup]="saqueForm" class="form mt-4" (submit)="saque()">
+
+                <div class="form-group">
+                    <input formControlName="valorSaque" class="form-control" placeholder="Valor" autofocus #valorSaqueInput appMoneyMask>
+                    <small *ngIf="saqueForm.get('valorSaque').errors?.required && saqueForm.get('valorSaque').dirty" class="text-danger d-block mt-2">O valor é obrigatorio</small>
+                    <small *ngIf="saqueForm.get('valorSaque').errors?.max" class="text-danger d-block mt-2">O valor de cada saque não pode ser superior a 1.500 reais</small>
+                </div>
+
+                <button [disabled]="saqueForm.invalid" type="submit" class="btn btn-primary btn-block">
+                    Confirmar
+                </button>
+
+            </form>
+        </div>
+        <div class="col-lg-6  col-md-12  offset-lg-3">
+            <a [routerLink]="['/home']" class="btn btn-default btn-block">
+                Cancelar
+            </a>
+        </div>
+    </div>
+    <div class="row" *ngIf="cedulasParaValorSolicitado.length > 0">
+        <div class="col-md-12 mb-2">
+            <h3>Sua retirada de notas será de</h3>
+            <div class="row">
+                <div class="col-md-2 mb-2 cedulas" *ngFor="let item of cedulasParaValorSolicitado">
+
+                    <span class="quantidade">{{item.quantidade}} x</span> {{item.valor}}
+                    <span class="centavos">,00</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

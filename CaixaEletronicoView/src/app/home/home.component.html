@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mb-2">
+            <h3>Notas disponíveis</h3>
+            <div class="row">
+                <div class="col-md-2 mb-2 cedulas" *ngFor="let item of cedulas">
+                    {{item.valor}}<span>,00</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <a [routerLink]="['/retirada']" class="btn btn-primary btn-block">
+                Sacar
+            </a>
+        </div>
+    </div>
+</div>

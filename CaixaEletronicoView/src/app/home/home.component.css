@@ -1,0 +1,14 @@
+.cedulas {
+    width: 120px;
+    background-color: #c2cdd4;
+    border-radius: 10%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 2.5em;
+    margin-left: 5px;
+}
+
+.cedulas span {
+    font-size: 0.5em;
+}
